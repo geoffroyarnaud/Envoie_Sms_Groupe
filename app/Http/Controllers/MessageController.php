@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agence;
 use Illuminate\Http\Request;
+use Illuminate\Auth\User;
+use App\Http\Controllers\Controller;
 
 class MessageController extends Controller
 {
@@ -12,33 +15,38 @@ class MessageController extends Controller
 
         $Telephone = $request->input('Telephone');
 
-        $encodeMessage = urlencode($message);
+         $encodeMessage = urlencode($message);
 
-        $authkey = '';
+         $authkey = '';
 
         $senderId = '';
 
-        $route = 3;
+         $route = 3;
 
         $postData = $request->all();
 
         $mobileNumber = implode('', $postData['Telephone']);
 
         $arr = str_split($mobileNumber, '14');
-        
+
         $Telephones = implode(",", $arr);
 
-        //print_r($Telephones);
+        // try{
 
-       // exit();
+        //     $account_sid = getenv("TWILIO_SID");
+        //     $auth_token = getenv("TWILIO_TOKEN");
+        //     $twilio_number = getenv("TWILIO_FROM");
 
-       $data = array(
-        'authkey' => $authkey,
-        'Telephones' => $Telephone,
-        'message' => $encodeMessage,
-        'sender' => $senderId,
-        'route' => $route,
-       );
-       
+        //     $client = new Agence([$account_sid], $auth_token);
+        //     $client->messages->create($Telephones, [
+        //         'from' => $twilio_number,
+        //         'body' => $message
+        //     ]);
+        //     return redirect()->back()->with('response', 'Message Envoyé avec succes');
+        // }catch (Exception $e) {
+        //     //
+       // }
+        print_r($Telephone);
+       exit();
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests;
 use App\Models\Agence;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -70,7 +71,7 @@ class AdminController extends Controller
     {
         if(Auth::id()){
 
-            $data = Agence::select()->where("TypeClient", "=", "M" )->get();
+            $data = Agence::select()->where("TypeClient", "=", "M")->orderBy("id", "desc")->get();
 
             return view('admin.mecanogarag',compact('data'));
 
@@ -78,5 +79,22 @@ class AdminController extends Controller
         {
             return redirect('login');
         }
+    }
+
+    public function client_register()
+    {
+        return view('admin.cliregister');
+    }
+
+    public function enregistrement_cli(Request $request)
+    {
+        $data = new Agence();
+        $data->Nom = $request->nom;
+        $data->Profession = $request->profession;
+        $data->Contact = $request->numero;
+        $data->Typeclient = $request->typecli;
+        $data->save();
+
+        return redirect()->back()->with('message', 'Client Enregistrer Avec success');
     }
 }

@@ -69,6 +69,10 @@
                                 <a class="nav-link" href="{{url('/')}}">Home</a>
                              </li>
 
+                             <li class="nav-item">
+                                <a class="nav-link" href="{{url('client_register')}}">Enregistrer Client</a>
+                             </li>
+
                               <li class="nav-item">
                                  <a class="nav-link" href="{{url('particulier')}}"> Particulier</a>
                               </li>
@@ -78,6 +82,7 @@
                               <li class="nav-item">
                                  <a class="nav-link" href="{{url('mecanogarag')}}">Mecan/garag</a>
                               </li>
+                              
 
                                 <x-app-layout>
                                 </x-app-layout>

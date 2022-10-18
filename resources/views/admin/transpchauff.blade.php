@@ -69,6 +69,10 @@
                                 <a class="nav-link" href="{{url('/')}}">Home</a>
                              </li>
 
+                             <li class="nav-item">
+                                <a class="nav-link" href="{{url('client_register')}}">Enregistrer Client</a>
+                             </li>
+
                               <li class="nav-item">
                                  <a class="nav-link" href="{{url('particulier')}}"> Particulier </a>
                               </li>
@@ -105,10 +109,24 @@
       <!-- banner -->
       <section>
 
+    <form method="POST" action=" {{url('message')}} " class="form-horizontal">
+            @csrf
+        <div class="form-group">
+            <label for="name" class=" fs-1 col-md-4 control-label mt-2" >Entrez Message</label>
+
+            <div class="col-md-6">
+
+                <textarea class="form-control border border-dark" name="message" id="name" value="" required autofocus>
+
+                </textarea>
+
+            </div>
+        </div>
+
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">id</th>
+                <th scope="col"><input type="checkbox" id="checkAll"></th>
                 <th scope="col">Nom</th>
                 <th scope="col">Profession</th>
                 <th scope="col">Contact</th>
@@ -117,7 +135,7 @@
             <tbody>
                 @foreach ($data as $datas)
                 <tr>
-                    <th scope="row"> {{$datas->id}} </th>
+                    <th scope="row"> <input type="checkbox" name="Telephone[]" class="checkBoxClass" value="{{$datas->Contact}}"> </th>
                     <td>{{$datas->Nom}}</td>
                     <td>{{$datas->Profession}}</td>
                     <td>{{$datas->Contact}}</td>
@@ -125,7 +143,7 @@
                 @endforeach
             </tbody>
           </table>
-
+    </form>
       </section>
       <!-- end banner -->
 
@@ -141,6 +159,14 @@
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-   </body>
+
+      <script>
+        $(function(e){
+            $("#checkAll").click(function(){
+                $(" .checkBoxClass").prop('checked', $(this).prop('checked'));
+            })
+        });
+    </script>
+    </body>
 </html>
 

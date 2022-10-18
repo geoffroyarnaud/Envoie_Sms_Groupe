@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +20,10 @@ Route::get('/', [AdminController::class,'index']);
 Route::get('/home', [AdminController::class,'redirect']);
 
 Route::post('/message', [MessageController::class,'message']);
+
+Route::get('/client_register', [AdminController::class,'client_register']);
+
+Route::post('/enregistrement_cli', [AdminController::class,'enregistrement_cli']);
 
 Route::get('/particulier', [AdminController::class,'particulier']);
 

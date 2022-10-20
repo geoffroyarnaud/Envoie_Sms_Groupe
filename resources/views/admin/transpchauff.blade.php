@@ -112,7 +112,7 @@
     <form method="POST" action=" {{url('message')}} " class="form-horizontal">
             @csrf
         <div class="form-group">
-            <label for="name" class=" fs-1 col-md-4 control-label mt-2" >Entrez Message</label>
+            <label for="name" class=" col-md-4 control-label fs-1 mt-2" >Entrez Message</label>
 
             <div class="col-md-6">
 

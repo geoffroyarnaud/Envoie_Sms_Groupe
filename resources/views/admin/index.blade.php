@@ -82,7 +82,7 @@
                               <li class="nav-item">
                                  <a class="nav-link" href="{{url('mecanogarag')}}">Mecan/garag</a>
                               </li>
-                              
+
 
                                 <x-app-layout>
                                 </x-app-layout>
@@ -109,14 +109,14 @@
       <!-- end header -->
       <!-- banner -->
 
-      
+
       <section class="banner_main">
          <div class="container">
             <div class="row d_flex">
                <div class="col-md-5">
                   <div class="text-bg">
-                     <h1>Power ful<br> Web Hosting</h1>
-                     <span>Landing Page 2019</span>
+                     <h1>Le numerique<br> change nos vies</h1>
+                     <span>Rien n'est Impossible</span>
                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                      <a href="#">Get Started</a>
                   </div>

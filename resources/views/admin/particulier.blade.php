@@ -112,7 +112,7 @@
          @csrf
 
          <div class="form-group">
-                <label for="name" class="col-md-4 control-label" >Entrez Message</label>
+                <label for="name" class="col-md-4 control-label fs-1 mt-2" >Entrez Message</label>
 
                 <div class="col-md-6">
 

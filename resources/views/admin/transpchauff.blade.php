@@ -109,7 +109,7 @@
       <!-- banner -->
       <section>
 
-    <form method="POST" action=" {{url('message')}} " class="form-horizontal">
+    <form method="POST" action=" {{ route('sendmessage.particulier') }} " class="form-horizontal">
             @csrf
         <div class="form-group">
             <label for="name" class=" col-md-4 control-label fs-1 mt-2" >Entrez Message</label>
@@ -121,6 +121,13 @@
                 </textarea>
 
             </div>
+        <br/>
+            <div class="form-group">
+                <div class="col-md-6 col-md-offset-4">
+                        <button type="submit" class="btn btn-primary">
+                            Envoyer Message
+                        </button>
+                </div>
         </div>
 
         <table class="table">

@@ -20,8 +20,8 @@ Route::get('/', [AdminController::class,'index']);
 
 Route::get('/home', [AdminController::class,'redirect']);
 
-Route::get('/particulier', [ParticulierController::class,'index'])->name('index.particulier');
-Route::post('/particulier', [ParticulierController::class,'envoie'])->name('sendmessage.particulier');
+Route::get('/particulier', [ParticulierController::class,'index'])->middleware('auth')->name('index.particulier');
+Route::post('/particulier', [ParticulierController::class,'envoie'])->middleware('auth')->name('sendmessage.particulier');
 
 
 Route::post('/message', [MessageController::class,'message']);

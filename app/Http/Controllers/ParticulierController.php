@@ -42,7 +42,7 @@ class ParticulierController extends Controller
             }
         }
 
-        return redirect()->back()->with('message','Message envoyé avec succès aux '.count($request->Telephone). ' personnes sélectionnées.');
+        return redirect()->back()->with('message','Message envoyé avec succès aux '.count($request->Telephone).' personnes sélectionnées.');
 
     }
 }

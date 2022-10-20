@@ -72,7 +72,7 @@
                              </li>
 
                               <li class="nav-item">
-                                 <a class="nav-link" href="{{url('particulier')}}"> Particulier</a>
+                                 <a class="nav-link" href="{{ route('index.particulier') }}"> Particulier</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{url('transpchauff')}}"> Transport/Chauff</a>

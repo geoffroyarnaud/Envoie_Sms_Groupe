@@ -11,74 +11,27 @@ class AdminController extends Controller
 {
     public function index(){
 
-        if(Auth::id()){
-
-            return redirect('home');
-
-        }else
-        {
-
-            return view('admin.index');
-
-        }
-
+        return redirect('home');
     }
 
-    public function redirect()
-        {
-            if(Auth::id()){
+    public function redirect(){
 
-                $agence = Agence::all();
-
-                return view('admin.index',compact('agence'));
-
-            }else
-            {
-                return redirect()->back();
-            }
-
-        }
-
-    public function particulier()
-    {
-        if(Auth::id()){
-
-            $data = Agence::select()->where("TypeClient", "=", "P" )->get();
-
-            return view('admin.particulier', compact('data'));
-
-        }else
-        {
-             return redirect('login');
-        }
+        $agence = Agence::all();
+        return view('admin.index',compact('agence'));
     }
+
 
     public function transpchauff()
     {
-        if(Auth::id()){
-
-            $data = Agence::select()->where("TypeClient", "=", "T" )->get();
-
-            return view('admin.transpchauff',compact('data'));
-
-        }else
-        {
-         return redirect('login');
-        }
+        $data = Agence::select()->where("TypeClient", "T" )->get();
+        return view('admin.transpchauff',compact('data'));
     }
 
     public function mecanogarag()
     {
-        if(Auth::id()){
+        $data = Agence::select()->where("TypeClient", "M")->orderBy("id", "desc")->get();
+        return view('admin.mecanogarag',compact('data'));
 
-            $data = Agence::select()->where("TypeClient", "=", "M")->orderBy("id", "desc")->get();
-
-            return view('admin.mecanogarag',compact('data'));
-
-        }else
-        {
-            return redirect('login');
-        }
     }
 
     public function client_register()
@@ -95,6 +48,6 @@ class AdminController extends Controller
         $data->Typeclient = $request->typecli;
         $data->save();
 
-        return redirect()->back()->with('message', 'Client Enregistrer Avec success');
+        return redirect()->back()->with('message', 'Client Enregistré Avec success');
     }
 }

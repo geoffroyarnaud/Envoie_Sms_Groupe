@@ -19,6 +19,7 @@ class CreateAgencesTable extends Migration
             $table->string('Profession');
             $table->string('Contact');
             $table->string('Typeclient');
+            $table->timestamps();
         });
     }
 

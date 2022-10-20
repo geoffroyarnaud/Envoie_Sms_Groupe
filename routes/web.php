@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ParticulierController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,13 +20,15 @@ Route::get('/', [AdminController::class,'index']);
 
 Route::get('/home', [AdminController::class,'redirect']);
 
+Route::get('/particulier', [ParticulierController::class,'index'])->name('index.particulier');
+Route::post('/particulier', [ParticulierController::class,'envoie'])->name('sendmessage.particulier');
+
+
 Route::post('/message', [MessageController::class,'message']);
 
 Route::get('/client_register', [AdminController::class,'client_register']);
 
 Route::post('/enregistrement_cli', [AdminController::class,'enregistrement_cli']);
-
-Route::get('/particulier', [AdminController::class,'particulier']);
 
 Route::get('/transpchauff', [AdminController::class,'transpchauff']);
 
